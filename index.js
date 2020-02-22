@@ -174,7 +174,6 @@ class Student extends Lambdasian {
     this.className = attributes.className;
     this.favSubjects = attributes.favSubjects;
     this.grade = 50;
-    this.canGraduate = false;
   }
   listSubjects() {
     return `Loving ${this.favSubjects.join(', ')}!`;
@@ -186,8 +185,7 @@ class Student extends Lambdasian {
     return `${this.name} has begun sprint challenge on ${subject}`;
   }
   graduate() {
-    if (this.grade >= 70) this.canGraduate = true;
-    return (this.canGraduate ? `Congratulations, ${this.name} is ready to graduate` : `${this.name} has a grade of ${this.grade}. Needs at least a 70 to graduate`);
+    return (this.grade >= 70 ? `Congratulations, ${this.name} is ready to graduate` : `${this.name} has a grade of ${this.grade}. Needs at least a 70 to graduate`);
   }
 }
 
